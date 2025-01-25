@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record model="ir.ui.view" id="view_order_form_inherit_sale_auto_flow">
+		<field name="name">sale.order.form.sale_auto_flow</field>
+	    <field name="model">sale.order</field>
+	    <field name="inherit_id" ref="sale.view_order_form" />
+	    <field name="arch" type="xml">
+	    
+	      <xpath expr="//field[@name='payment_term_id']" position="after">
+	      <field name="can_edit_manager_reference" invisible="1"/>
+	      <field name="manager_reference" readonly="not can_edit_manager_reference"/>
+	      <field name="auto_workflow"/>
+                	
+			    </xpath>
+	    
+	    </field>
+	    </record>
+	    </odoo>
